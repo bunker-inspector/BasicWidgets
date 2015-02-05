@@ -1,11 +1,9 @@
 package com.cs646.ted.assignment2;
 
-import android.app.DatePickerDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
@@ -27,7 +25,6 @@ public class DateActivity extends ActionBarActivity implements DatePicker.OnDate
     {
         Toast.makeText(view.getContext(), "Noice", Toast.LENGTH_SHORT).show();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
