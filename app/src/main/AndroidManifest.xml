@@ -16,6 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".KeyboardActivity"
+            android:label="@string/title_activity_keyboard"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs646.ted.assignment2.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DessertActivity"
+            android:label="@string/title_activity_desert_list" >
+        </activity>
+        <activity
+            android:name=".DateActivity"
+            android:label="@string/title_activity_date"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cs646.ted.assignment2.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

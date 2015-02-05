@@ -1,45 +1,61 @@
 package com.cs646.ted.assignment2;
 
-import android.app.ListFragment;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
-
-import java.lang.reflect.Array;
-
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
+
+    public static final int     DATE_ACTIVITY       = 0,
+                                KEYBOARD_ACTIVITY   = 1,
+                                LIST_ACTIVITY       = 2;
+
+    public static final String  PACKAGE_NAME        = "com.cs646.ted.assignment2",
+                                DATE_ACTIVITY_NAME  = "com.cs646.ted.assignment2.DateActivity",
+                                KEYB_ACTIVITY_NAME  = "com.cs646.ted.assignment2.KeyboardActivity",
+                                DESS_ACTIVITY_NAME  = "com.cs646.ted.assignment2.DessertActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner = (Spinner) findViewById(R.id.main_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.activities_array,
+                R.array.activity_array,
                 android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        if (savedInstanceState == null) {
+        final Button goButton = (Button) findViewById(R.id.main_button);
+        goButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent go = new Intent();
+                switch(((Spinner) findViewById(R.id.main_spinner)).getSelectedItemPosition()){
+                    case(DATE_ACTIVITY):
+                        go.setClassName(PACKAGE_NAME, DATE_ACTIVITY_NAME);
+                        break;
+                    case(KEYBOARD_ACTIVITY):
+                        go.setClassName(PACKAGE_NAME, KEYB_ACTIVITY_NAME);
+                        break;
+                    case(LIST_ACTIVITY):
+                        go.setClassName(PACKAGE_NAME, DESS_ACTIVITY_NAME);
+                        break;
+                }
+                startActivity(go);
+            }
+        });
 
-            getFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.container, new MainActivityFragment())
-                    .commit();
-        }
+        EditText mainEditText = (EditText) findViewById(R.id.main_editText);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,22 +78,4 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public static class MainActivityFragment extends ListFragment {
-
-
-        /*@Override
-        public View onCreateView(LayoutInflater inflater,
-                                 ViewGroup container,
-                                 Bundle savedInstanceState)
-        {
-            ArrayAdapter<Object> adapter = new ArrayAdapter<Object>(getActivity(),
-                    android.R.layout.simple_list_item_1,
-                    0);
-            setListAdapter(adapter);
-
-            return super.onCreateView(inflater, container,savedInstanceState);
-        }*/
-    }
-
 }

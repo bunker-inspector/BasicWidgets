@@ -22,4 +22,4 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         style="?attr/actionModeStyle"/>
-<!-- From: file:/home/ted/projects/Android/Assignment2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_mode_bar.xml -->
+<!-- From: file:/home/ted/projects/Android/assignment2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_mode_bar.xml -->

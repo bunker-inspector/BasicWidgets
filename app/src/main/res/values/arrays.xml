@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="dessert_array">
+        <item>Cupcake</item>
+        <item>Donut</item>
+        <item>Gingerbread</item>
+        <item>Ice Cream</item>
+        <item>Jelly Bean</item>
+    </array>
+
+    <array name="activity_array">
+        <item>Date saver</item>
+        <item>Text fields</item>
+        <item>Dessert list</item>
+    </array>
+</resources>

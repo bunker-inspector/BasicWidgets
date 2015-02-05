@@ -3,13 +3,18 @@
 
     <string name="app_name">Assignment 2</string>
     <string name="action_settings">Settings</string>
-
-    <string-array name="activities_array">
-        <item>Date Saver</item>
-        <item>Keyboard Input</item>
-        <item>Dessert list</item>
-    </string-array>
-
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinner_prompt_text">Select activity</string>
+    <string name="edit_text_hint">Input text</string>
+    <string name="main_activity_button_text">Go</string>
+    <string name="title_activity_date">DateActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_keyboard">KeyboardActivity</string>
+    <string name="title_activity_desert_list">DesertListActivity</string>
+    <string name="keyboard_top_hint">Top text</string>
+    <string name="keyboard_mid_hint">Mid text</string>
+    <string name="keyboard_bot_hint">Bottom text</string>
+    <string name="hide_txt">Hide</string>
+    <string name="back_txt">Back</string>
 
 </resources>
