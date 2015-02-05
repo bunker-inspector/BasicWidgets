@@ -1,17 +1,31 @@
 package com.cs646.ted.assignment2;
 
+import android.app.DatePickerDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.Toast;
 
 
-public class DateActivity extends ActionBarActivity {
+public class DateActivity extends ActionBarActivity implements DatePicker.OnDateChangedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date);
+
+        DatePicker datePicker = (DatePicker) findViewById(R.id.date_activity_date_picker);
+        datePicker.init(2000, 1, 1, this);
+    }
+
+    @Override
+    public void onDateChanged(DatePicker view, int year, int monthOfYear,
+                          int dayOfMonth)
+    {
+        Toast.makeText(view.getContext(), "Noice", Toast.LENGTH_SHORT).show();
     }
 
 

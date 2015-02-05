@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -45,6 +44,10 @@ public class MainActivity extends ActionBarActivity {
                         break;
                     case(KEYBOARD_ACTIVITY):
                         go.setClassName(PACKAGE_NAME, KEYB_ACTIVITY_NAME);
+                        String toSend = ((EditText)findViewById(R.id.main_editText))
+                                .getText()
+                                .toString();
+                        go.putExtra("mainEditText", toSend);
                         break;
                     case(LIST_ACTIVITY):
                         go.setClassName(PACKAGE_NAME, DESS_ACTIVITY_NAME);

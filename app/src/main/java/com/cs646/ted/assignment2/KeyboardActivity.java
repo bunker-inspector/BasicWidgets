@@ -4,6 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class KeyboardActivity extends ActionBarActivity {
@@ -12,6 +16,27 @@ public class KeyboardActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keyboard);
+
+        Bundle initTopEditText = getIntent().getExtras();
+        EditText topEditText = (EditText) findViewById(R.id.keyboard_top_edit_text);
+        topEditText.setText(initTopEditText.getString("mainEditText"));
+
+        final Button hideButton = (Button) findViewById(R.id.keyboard_button_hide);
+        hideButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                EditText tmpEditText = (EditText)findViewById(R.id.keyboard_top_edit_text);
+                InputMethodManager manager;
+                manager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                manager.hideSoftInputFromWindow(tmpEditText.getWindowToken(),0);
+            }
+        });
+
+        final Button backButton = (Button) findViewById(R.id.keyboard_button_back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 

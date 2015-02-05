@@ -7,5 +7,14 @@
     tools:context="com.cs646.ted.assignment2.DateActivity"
     android:id="@+id/date_layout">
 
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date_activity_date_picker"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="94dp"
+        android:calendarViewShown="true"
+        android:spinnersShown="false" />
 </RelativeLayout>
 <!-- From: file:/home/ted/projects/Android/assignment2/app/src/main/res/layout/activity_date.xml -->
