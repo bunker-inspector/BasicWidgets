@@ -16,5 +16,14 @@
         android:layout_marginTop="94dp"
         android:calendarViewShown="true"
         android:spinnersShown="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_date_button_text"
+        android:id="@+id/date_set_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp" />
 </RelativeLayout>
 <!-- From: file:/home/ted/projects/Android/assignment2/app/src/main/res/layout/activity_date.xml -->

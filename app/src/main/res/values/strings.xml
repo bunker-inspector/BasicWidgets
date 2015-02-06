@@ -16,5 +16,7 @@
     <string name="keyboard_bot_hint">Bottom text</string>
     <string name="hide_txt">Hide</string>
     <string name="back_txt">Back</string>
+    <string name="set_date_button_text">Set</string>
+    <string name="prompt_edit_text_text">Save Date?</string>
 
 </resources>

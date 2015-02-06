@@ -375,6 +375,8 @@
     <string name="keyboard_mid_hint">Mid text</string>
     <string name="keyboard_top_hint">Top text</string>
     <string name="main_activity_button_text">Go</string>
+    <string name="prompt_edit_text_text">Save Date?</string>
+    <string name="set_date_button_text">Set</string>
     <string name="spinner_prompt_text">Select activity</string>
     <string name="title_activity_date">DateActivity</string>
     <string name="title_activity_desert_list">DesertListActivity</string>

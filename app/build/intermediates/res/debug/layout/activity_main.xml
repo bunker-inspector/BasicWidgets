@@ -7,7 +7,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:name="com.cs646.ted.assignment2.DessertFragment"
-        tools:layout="@android:layout/simple_list_item_1"/>
+        tools:layout="@android:layout/simple_list_item_1"
+        android:id="@+id/main_activity_list_fragment" />
 
     <EditText
         android:layout_width="wrap_content"

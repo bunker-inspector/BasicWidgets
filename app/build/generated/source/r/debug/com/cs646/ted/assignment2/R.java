@@ -1461,7 +1461,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09002e;
         public static final int action_mode_bar_stub=0x7f09002d;
         public static final int action_mode_close_button=0x7f090020;
-        public static final int action_settings=0x7f09004f;
+        public static final int action_settings=0x7f090053;
         public static final int activity_chooser_view_content=0x7f090021;
         public static final int always=0x7f090016;
         public static final int beginning=0x7f090013;
@@ -1469,10 +1469,11 @@ containing a value of this type.
         public static final int collapseActionView=0x7f090017;
         public static final int date_activity_date_picker=0x7f090040;
         public static final int date_layout=0x7f09003f;
+        public static final int date_set_button=0x7f090041;
         public static final int decor_content_parent=0x7f09002f;
         public static final int default_activity_button=0x7f090024;
-        public static final int dessert_back_button=0x7f090042;
-        public static final int dessert_list_layout=0x7f090041;
+        public static final int dessert_back_button=0x7f090043;
+        public static final int dessert_list_layout=0x7f090042;
         public static final int dialog=0x7f09001b;
         public static final int disableHome=0x7f09000c;
         public static final int dropdown=0x7f09001c;
@@ -1485,26 +1486,29 @@ containing a value of this type.
         public static final int icon=0x7f090026;
         public static final int ifRoom=0x7f090018;
         public static final int image=0x7f090023;
-        public static final int keyboard_activity_top_layout=0x7f090044;
-        public static final int keyboard_bot_edit_text=0x7f090047;
-        public static final int keyboard_button_back=0x7f090048;
-        public static final int keyboard_button_hide=0x7f090049;
-        public static final int keyboard_mid_edit_text=0x7f090046;
-        public static final int keyboard_top_edit_text=0x7f090045;
+        public static final int keyboard_activity_top_layout=0x7f090045;
+        public static final int keyboard_bot_edit_text=0x7f090048;
+        public static final int keyboard_button_back=0x7f090049;
+        public static final int keyboard_button_hide=0x7f09004a;
+        public static final int keyboard_mid_edit_text=0x7f090047;
+        public static final int keyboard_top_edit_text=0x7f090046;
         public static final int listMode=0x7f090009;
-        public static final int list_frag_layout=0x7f090043;
+        public static final int list_frag_layout=0x7f090044;
         public static final int list_item=0x7f090025;
-        public static final int main_button=0x7f09004c;
-        public static final int main_editText=0x7f09004b;
-        public static final int main_layout=0x7f09004a;
-        public static final int main_spinner=0x7f09004d;
-        public static final int main_textview=0x7f09004e;
+        public static final int main_activity_list_fragment=0x7f09004c;
+        public static final int main_button=0x7f09004e;
+        public static final int main_editText=0x7f09004d;
+        public static final int main_layout=0x7f09004b;
+        public static final int main_spinner=0x7f09004f;
+        public static final int main_textview=0x7f090050;
         public static final int middle=0x7f090015;
         public static final int never=0x7f090019;
         public static final int none=0x7f09000e;
         public static final int normal=0x7f09000a;
         public static final int progress_circular=0x7f090005;
         public static final int progress_horizontal=0x7f090006;
+        public static final int prompt_edit_text=0x7f090052;
+        public static final int prompt_layout=0x7f090051;
         public static final int radio=0x7f09002b;
         public static final int search_badge=0x7f090035;
         public static final int search_bar=0x7f090034;
@@ -1561,7 +1565,8 @@ containing a value of this type.
         public static final int activity_keyboard=0x7f030019;
         public static final int activity_main=0x7f03001a;
         public static final int fragment_main=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int prompt=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int menu_date=0x7f0d0000;
@@ -1597,10 +1602,12 @@ containing a value of this type.
         public static final int keyboard_mid_hint=0x7f0b0018;
         public static final int keyboard_top_hint=0x7f0b0019;
         public static final int main_activity_button_text=0x7f0b001a;
-        public static final int spinner_prompt_text=0x7f0b001b;
-        public static final int title_activity_date=0x7f0b001c;
-        public static final int title_activity_desert_list=0x7f0b001d;
-        public static final int title_activity_keyboard=0x7f0b001e;
+        public static final int prompt_edit_text_text=0x7f0b001b;
+        public static final int set_date_button_text=0x7f0b001c;
+        public static final int spinner_prompt_text=0x7f0b001d;
+        public static final int title_activity_date=0x7f0b001e;
+        public static final int title_activity_desert_list=0x7f0b001f;
+        public static final int title_activity_keyboard=0x7f0b0020;
     }
     public static final class style {
         /**  Customize your theme here. 

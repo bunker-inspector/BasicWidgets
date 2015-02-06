@@ -2,18 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/home/ted/projects/Android/assignment2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/home/ted/projects/Android/assignment2/app/build/intermediates/pre-dexed/debug/classes-9d76fc6e265eb7a5f8ad08dd121d91564d3c57e5.jar" />
-    </item>
-    <item
         jar="/home/ted/projects/Android/assignment2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex dex="/home/ted/projects/Android/assignment2/app/build/intermediates/pre-dexed/debug/classes-eacd3ec1f2b2722941df2d17659dbefede92f7a6.jar" />
+    </item>
+    <item
+        jar="/home/ted/projects/Android/assignment2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/ted/projects/Android/assignment2/app/build/intermediates/pre-dexed/debug/classes-9d76fc6e265eb7a5f8ad08dd121d91564d3c57e5.jar" />
     </item>
     <item
         jar="/home/ted/projects/Android/assignment2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
