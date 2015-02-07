@@ -7,6 +7,15 @@
     tools:context="com.cs646.ted.assignment2.DessertActivity"
     android:id="@+id/dessert_list_layout">
 
+    <fragment
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:name="com.cs646.ted.assignment2.DessertFragment"
+        tools:layout="@android:layout/simple_list_item_1"
+        android:id="@+id/dessert_activity_list_fragment"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,14 +24,5 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_toStartOf="@+id/dessert_back_button"
-        android:id="@+id/list_frag_layout"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/dessert_back_button"></LinearLayout>
 </RelativeLayout>
 <!-- From: file:/home/ted/projects/Android/assignment2/app/src/main/res/layout/activity_dessert_list.xml -->

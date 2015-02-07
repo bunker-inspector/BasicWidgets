@@ -502,7 +502,8 @@ int id date_layout 0x7f09003f
 int id date_set_button 0x7f090041
 int id decor_content_parent 0x7f09002f
 int id default_activity_button 0x7f090024
-int id dessert_back_button 0x7f090043
+int id dessert_activity_list_fragment 0x7f090043
+int id dessert_back_button 0x7f090044
 int id dessert_list_layout 0x7f090042
 int id dialog 0x7f09001b
 int id disableHome 0x7f09000c
@@ -511,6 +512,7 @@ int id edit_query 0x7f090033
 int id end 0x7f090014
 int id expand_activities_button 0x7f090022
 int id expanded_menu 0x7f090028
+int id fragment_layout 0x7f090050
 int id home 0x7f090004
 int id homeAsUp 0x7f09000d
 int id icon 0x7f090026
@@ -523,14 +525,12 @@ int id keyboard_button_hide 0x7f09004a
 int id keyboard_mid_edit_text 0x7f090047
 int id keyboard_top_edit_text 0x7f090046
 int id listMode 0x7f090009
-int id list_frag_layout 0x7f090044
 int id list_item 0x7f090025
 int id main_activity_list_fragment 0x7f09004c
 int id main_button 0x7f09004e
 int id main_editText 0x7f09004d
 int id main_layout 0x7f09004b
 int id main_spinner 0x7f09004f
-int id main_textview 0x7f090050
 int id middle 0x7f090015
 int id never 0x7f090019
 int id none 0x7f09000e

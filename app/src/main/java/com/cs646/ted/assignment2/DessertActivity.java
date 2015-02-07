@@ -1,13 +1,17 @@
 package com.cs646.ted.assignment2;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class DessertActivity extends ActionBarActivity {
+public class DessertActivity extends ActionBarActivity implements DessertFragment.OnSelectionChangeListener{
+
+    public static int mListItemSelected = -1;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,12 +24,32 @@ public class DessertActivity extends ActionBarActivity {
             }
         });
 
-        if (savedInstanceState == null) {
-            getFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.list_frag_layout, new DessertFragment())
-                    .commit();
+        mListItemSelected = getIntent().getExtras().getInt("listactivityextra");
+    }
+
+    @Override
+    protected void onStart() {
+        if(mListItemSelected > -1){
+            onSendSelection();
         }
+
+        super.onStart();
+    }
+
+    @Override
+    public void onSelectionChange() {
+        DessertFragment dessertFragment = (DessertFragment)getFragmentManager()
+                .findFragmentById(R.id.dessert_activity_list_fragment);
+
+        mListItemSelected = dessertFragment.mSelected;
+    }
+
+    @Override
+    public void onSendSelection() {
+        DessertFragment dessertFragment = (DessertFragment)getFragmentManager()
+                .findFragmentById(R.id.dessert_activity_list_fragment);
+
+        dessertFragment.getListView().getItemAtPosition(mListItemSelected);
     }
 
     @Override

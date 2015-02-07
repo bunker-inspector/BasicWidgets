@@ -8,7 +8,9 @@
         android:layout_height="wrap_content"
         android:name="com.cs646.ted.assignment2.DessertFragment"
         tools:layout="@android:layout/simple_list_item_1"
-        android:id="@+id/main_activity_list_fragment" />
+        android:id="@+id/main_activity_list_fragment"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -22,8 +24,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:layout_above="@+id/main_button"
-        android:layout_alignRight="@+id/main_button"
-        android:layout_alignEnd="@+id/main_button" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -48,8 +49,7 @@
         android:spinnerMode="dropdown"
         android:focusableInTouchMode="true"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>
 <!-- From: file:/home/ted/projects/Android/assignment2/app/src/main/res/layout/activity_main.xml -->

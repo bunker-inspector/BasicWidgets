@@ -1,8 +1,9 @@
 package com.cs646.ted.assignment2;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements DessertFragment.OnSelectionChangeListener{
 
     public static final int     DATE_ACTIVITY       = 0,
                                 KEYBOARD_ACTIVITY   = 1,
@@ -21,6 +22,8 @@ public class MainActivity extends ActionBarActivity {
                                 DATE_ACTIVITY_NAME  = "com.cs646.ted.assignment2.DateActivity",
                                 KEYB_ACTIVITY_NAME  = "com.cs646.ted.assignment2.KeyboardActivity",
                                 DESS_ACTIVITY_NAME  = "com.cs646.ted.assignment2.DessertActivity";
+
+    public static int mListItemSelected = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,8 @@ public class MainActivity extends ActionBarActivity {
                         go.putExtra("mainEditText", toSend);
                         break;
                     case(LIST_ACTIVITY):
+                        onSelectionChange();
+                        go.putExtra("listactivityextra", mListItemSelected);
                         go.setClassName(PACKAGE_NAME, DESS_ACTIVITY_NAME);
                         break;
                 }
@@ -58,6 +63,22 @@ public class MainActivity extends ActionBarActivity {
         });
 
         EditText mainEditText = (EditText) findViewById(R.id.main_editText);
+    }
+
+    @Override
+    public void onSelectionChange() {
+        DessertFragment dessertFragment = (DessertFragment)getFragmentManager()
+                .findFragmentById(R.id.main_activity_list_fragment);
+
+        mListItemSelected = dessertFragment.mSelected;
+    }
+
+    @Override
+    public void onSendSelection() {
+        DessertFragment dessertFragment = (DessertFragment)getFragmentManager()
+                .findFragmentById(R.id.main_activity_list_fragment);
+
+        dessertFragment.getView().setBackgroundColor(Color.CYAN);
     }
 
     @Override

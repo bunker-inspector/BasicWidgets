@@ -1472,7 +1472,8 @@ containing a value of this type.
         public static final int date_set_button=0x7f090041;
         public static final int decor_content_parent=0x7f09002f;
         public static final int default_activity_button=0x7f090024;
-        public static final int dessert_back_button=0x7f090043;
+        public static final int dessert_activity_list_fragment=0x7f090043;
+        public static final int dessert_back_button=0x7f090044;
         public static final int dessert_list_layout=0x7f090042;
         public static final int dialog=0x7f09001b;
         public static final int disableHome=0x7f09000c;
@@ -1481,6 +1482,7 @@ containing a value of this type.
         public static final int end=0x7f090014;
         public static final int expand_activities_button=0x7f090022;
         public static final int expanded_menu=0x7f090028;
+        public static final int fragment_layout=0x7f090050;
         public static final int home=0x7f090004;
         public static final int homeAsUp=0x7f09000d;
         public static final int icon=0x7f090026;
@@ -1493,14 +1495,12 @@ containing a value of this type.
         public static final int keyboard_mid_edit_text=0x7f090047;
         public static final int keyboard_top_edit_text=0x7f090046;
         public static final int listMode=0x7f090009;
-        public static final int list_frag_layout=0x7f090044;
         public static final int list_item=0x7f090025;
         public static final int main_activity_list_fragment=0x7f09004c;
         public static final int main_button=0x7f09004e;
         public static final int main_editText=0x7f09004d;
         public static final int main_layout=0x7f09004b;
         public static final int main_spinner=0x7f09004f;
-        public static final int main_textview=0x7f090050;
         public static final int middle=0x7f090015;
         public static final int never=0x7f090019;
         public static final int none=0x7f09000e;
