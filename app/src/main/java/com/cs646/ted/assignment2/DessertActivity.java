@@ -1,15 +1,16 @@
 package com.cs646.ted.assignment2;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class DessertActivity extends ActionBarActivity implements DessertFragment.OnSelectionChangeListener{
+
+    public static final String EXTRA_SELECTED_POSITION = "listactivityextra";
 
     public static int mListItemSelected = -1;
 
@@ -20,20 +21,24 @@ public class DessertActivity extends ActionBarActivity implements DessertFragmen
         final Button back = (Button) findViewById(R.id.dessert_back_button);
         back.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+                onSelectionChange();
+                Intent passBack = getIntent();
+                passBack.putExtra(EXTRA_SELECTED_POSITION, mListItemSelected);
+                setResult(RESULT_OK, passBack);
                 finish();
             }
         });
 
-        mListItemSelected = getIntent().getExtras().getInt("listactivityextra");
+        mListItemSelected = getIntent().getExtras().getInt(EXTRA_SELECTED_POSITION);
     }
 
     @Override
-    protected void onStart() {
-        if(mListItemSelected > -1){
-            onSendSelection();
-        }
-
-        super.onStart();
+    public void onBackPressed() {
+        onSelectionChange();
+        Intent passBack = getIntent();
+        passBack.putExtra(EXTRA_SELECTED_POSITION, mListItemSelected);
+        setResult(RESULT_OK, passBack);
+        finish();
     }
 
     @Override
@@ -41,16 +46,17 @@ public class DessertActivity extends ActionBarActivity implements DessertFragmen
         DessertFragment dessertFragment = (DessertFragment)getFragmentManager()
                 .findFragmentById(R.id.dessert_activity_list_fragment);
 
-        mListItemSelected = dessertFragment.mSelected;
+        mListItemSelected = dessertFragment.getSelected();
     }
 
     @Override
-    public void onSendSelection() {
-        DessertFragment dessertFragment = (DessertFragment)getFragmentManager()
+    public void onSetSelection(int position) {
+        DessertFragment dessertFragment = (DessertFragment) getFragmentManager()
                 .findFragmentById(R.id.dessert_activity_list_fragment);
 
-        dessertFragment.getListView().getItemAtPosition(mListItemSelected);
+        dessertFragment.select(position);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

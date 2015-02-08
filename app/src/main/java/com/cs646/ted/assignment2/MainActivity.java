@@ -1,7 +1,6 @@
 package com.cs646.ted.assignment2;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -23,6 +22,10 @@ public class MainActivity extends ActionBarActivity implements DessertFragment.O
                                 KEYB_ACTIVITY_NAME  = "com.cs646.ted.assignment2.KeyboardActivity",
                                 DESS_ACTIVITY_NAME  = "com.cs646.ted.assignment2.DessertActivity";
 
+    public static final String  EXTRA_SELECTED_POSITION = "listactivityextra",
+                                EXTRA_MAIN_EDITTEXT     = "mainexittext";
+
+
     public static int mListItemSelected = -1;
 
     @Override
@@ -41,24 +44,28 @@ public class MainActivity extends ActionBarActivity implements DessertFragment.O
         goButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 Intent go = new Intent();
+                int code = -1;
                 switch(((Spinner) findViewById(R.id.main_spinner)).getSelectedItemPosition()){
                     case(DATE_ACTIVITY):
+                        code = DATE_ACTIVITY;
                         go.setClassName(PACKAGE_NAME, DATE_ACTIVITY_NAME);
                         break;
                     case(KEYBOARD_ACTIVITY):
+                        code = KEYBOARD_ACTIVITY;
                         go.setClassName(PACKAGE_NAME, KEYB_ACTIVITY_NAME);
                         String toSend = ((EditText)findViewById(R.id.main_editText))
                                 .getText()
                                 .toString();
-                        go.putExtra("mainEditText", toSend);
+                        go.putExtra(EXTRA_MAIN_EDITTEXT, toSend);
                         break;
                     case(LIST_ACTIVITY):
+                        code = LIST_ACTIVITY;
                         onSelectionChange();
-                        go.putExtra("listactivityextra", mListItemSelected);
+                        go.putExtra(EXTRA_SELECTED_POSITION, mListItemSelected);
                         go.setClassName(PACKAGE_NAME, DESS_ACTIVITY_NAME);
                         break;
                 }
-                startActivity(go);
+                startActivityForResult(go, code);
             }
         });
 
@@ -66,19 +73,36 @@ public class MainActivity extends ActionBarActivity implements DessertFragment.O
     }
 
     @Override
-    public void onSelectionChange() {
-        DessertFragment dessertFragment = (DessertFragment)getFragmentManager()
-                .findFragmentById(R.id.main_activity_list_fragment);
-
-        mListItemSelected = dessertFragment.mSelected;
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode != LIST_ACTIVITY){
+                return;
+        }
+        else {
+            switch (resultCode) {
+                case RESULT_OK:
+                    mListItemSelected = data.getIntExtra(EXTRA_SELECTED_POSITION, -1);
+                    onSetSelection(mListItemSelected);
+                    break;
+                case RESULT_CANCELED:
+                    break;
+            }
+        }
     }
 
     @Override
-    public void onSendSelection() {
-        DessertFragment dessertFragment = (DessertFragment)getFragmentManager()
+    public void onSelectionChange() {
+        DessertFragment dessertFragment = (DessertFragment) getFragmentManager()
                 .findFragmentById(R.id.main_activity_list_fragment);
 
-        dessertFragment.getView().setBackgroundColor(Color.CYAN);
+        mListItemSelected = dessertFragment.getSelected();
+    }
+
+    @Override
+    public void onSetSelection(int position) {
+        DessertFragment dessertFragment = (DessertFragment) getFragmentManager()
+                .findFragmentById(R.id.main_activity_list_fragment);
+
+        dessertFragment.select(position);
     }
 
     @Override

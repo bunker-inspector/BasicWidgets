@@ -12,6 +12,8 @@ import android.widget.EditText;
 
 public class KeyboardActivity extends ActionBarActivity {
 
+    public static final String EXTRA_MAIN_EDITTEXT = "mainexittext";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +21,7 @@ public class KeyboardActivity extends ActionBarActivity {
 
         Bundle initTopEditText = getIntent().getExtras();
         EditText topEditText = (EditText) findViewById(R.id.keyboard_top_edit_text);
-        topEditText.setText(initTopEditText.getString("mainEditText"));
+        topEditText.setText(initTopEditText.getString(EXTRA_MAIN_EDITTEXT));
 
         final Button hideButton = (Button) findViewById(R.id.keyboard_button_hide);
         hideButton.setOnClickListener(new View.OnClickListener() {
